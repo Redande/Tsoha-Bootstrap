@@ -32,11 +32,11 @@
     }
 
     public static function kirjaudu(){
-      View::make('suunnitelmat/sisäänkirjautuminen.html');
+      View::make('suunnitelmat/sisaankirjautuminen.html');
     }
 
     public static function luoTili(){
-      View::make('suunnitelmat/käyttäjätilinluominen.html');
+      View::make('suunnitelmat/kayttajatilinluominen.html');
     }
 
     public static function esineEsimerkki(){
@@ -52,6 +52,6 @@
     }
 
     public static function kayttajaEsimerkki(){
-      View::make('suunnitelmat/esimerkkikäyttäjäsivu.html');
+      View::make('suunnitelmat/esimerkkikayttajasivu.html');
     }
   }
