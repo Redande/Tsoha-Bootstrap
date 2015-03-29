@@ -55,3 +55,7 @@
   $routes->get('/heroes', function() {
     HeroController::index();
   });
+
+  $routes->get('/sankari/:id', function($id) {
+    HeroController::show($id);
+  });
