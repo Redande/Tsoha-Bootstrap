@@ -16,7 +16,7 @@ Tavoitteena on siis, että rekisteröitynyt käyttäjä voi luoda ja tallentaa j
 ## Linkkejä esimerkkisivuille
 
 * [Etusivu](http://antleino.users.cs.helsinki.fi/tsoha/etusivu)
-* [Sankarit](http://antleino.users.cs.helsinki.fi/tsoha/sankarit)
+* [Sankarit(ei toiminnallisuutta, testaa mieluummin viimeistä linkkiä)](http://antleino.users.cs.helsinki.fi/tsoha/sankarit)
 * [Esineet](http://antleino.users.cs.helsinki.fi/tsoha/esineet)
 * [Taidot](http://antleino.users.cs.helsinki.fi/tsoha/taidot)
 * [Roolit](http://antleino.users.cs.helsinki.fi/tsoha/roolit)
@@ -26,4 +26,4 @@ Tavoitteena on siis, että rekisteröitynyt käyttäjä voi luoda ja tallentaa j
 * [KäyttäjäEsimerkki](http://antleino.users.cs.helsinki.fi/tsoha/kayttaja)
 * [Käyttäjätilin luominen](http://antleino.users.cs.helsinki.fi/tsoha/signup)
 * [Sisäänkirjautuminen](http://antleino.users.cs.helsinki.fi/tsoha/login)
-* [Sankarilista linkkeineen sankareiden sivulle (sankareiden sivuja ei vielä toteutettu)](http://antleino.users.cs.helsinki.fi/tsoha/heroes)
+* [Sankarilista linkkeineen sankareiden sivulle](http://antleino.users.cs.helsinki.fi/tsoha/heroes)
