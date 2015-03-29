@@ -8,7 +8,11 @@
     }
 
     public static function sandbox(){
-      View::make('helloworld.html');
+      $axe = Hahmo::find(1);
+      $hahmot = Hahmo::all();
+
+      Kint::dump($hahmot);
+      Kint::dump($axe);
     }
 
     public static function hahmolista(){
