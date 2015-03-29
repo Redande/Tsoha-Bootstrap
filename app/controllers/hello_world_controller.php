@@ -8,11 +8,11 @@
     }
 
     public static function sandbox(){
-      $axe = Hahmo::find(1);
+      $NP = Hahmo::find(1);
       $hahmot = Hahmo::all();
 
       Kint::dump($hahmot);
-      Kint::dump($axe);
+      Kint::dump($NP);
     }
 
     public static function hahmolista(){

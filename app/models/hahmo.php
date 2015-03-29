@@ -17,9 +17,9 @@ class Hahmo extends BaseModel{
 		foreach($rows as $row){
 			$hahmot[] = new Hahmo(array(
 				'id' => $row['id'],
-				'name' => $row['name'],
+				'name' => $row['nimi'],
 				'roles' => Hahmo::roles($row['id']),
-				'abilities' => abilities($row['id'])
+				'abilities' => Hahmo::abilities($row['id'])
 			));
 		}
 
@@ -36,7 +36,7 @@ class Hahmo extends BaseModel{
 				'id' => $row['id'],
 				'name' => $row['nimi'],
 				'roles' => Hahmo::roles($row['id']),
-				'abilities' => abilities($row['id'])
+				'abilities' => Hahmo::abilities($row['id'])
 			));
 
 			return $hahmo;
@@ -47,7 +47,7 @@ class Hahmo extends BaseModel{
 
 	public static function roles($id){
 		$query = DB::connection()->prepare('SELECT * FROM Liitos2 WHERE hahmo = :id');
-		$query->execute(array('hahmo' => $id));
+		$query->execute(array('id' => $id));
 		$row = $query->fetch();
 		$roolit = array();
 
@@ -60,11 +60,11 @@ class Hahmo extends BaseModel{
 
 	public static function abilities($id){
 		$query = DB::connection()->prepare('SELECT * FROM Taito WHERE hahmo = :id');
-		$query->execute(array('hahmo' => $id));
-		$rows = $query->fetch();
+		$query->execute(array('id' => $id));
+		$row = $query->fetch();
 		$taidot = array();
 
-		foreach($rows as $row){
+		if($row){
 			$taidot = $row['hahmo'];
 		}
 
