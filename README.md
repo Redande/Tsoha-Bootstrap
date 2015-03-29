@@ -26,3 +26,4 @@ Tavoitteena on siis, että rekisteröitynyt käyttäjä voi luoda ja tallentaa j
 * [KäyttäjäEsimerkki](http://antleino.users.cs.helsinki.fi/tsoha/kayttaja)
 * [Käyttäjätilin luominen](http://antleino.users.cs.helsinki.fi/tsoha/signup)
 * [Sisäänkirjautuminen](http://antleino.users.cs.helsinki.fi/tsoha/login)
+* [Sankarilista linkkeineen sankareiden sivulle (sankareiden sivuja ei vielä toteutettu)](http://antleino.users.cs.helsinki.fi/tsoha/heroes)

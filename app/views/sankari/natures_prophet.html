@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <header>
+    <h1>Nature's Prophet</h1>
+  </header>
+
+  <article>
+    <p>Name: {{hero.name}}</p>
+    <p>Role:</p>
+    <ul>
+    	{% for role in hero.roles %}
+    		<li><a href="{{base_path}}/roolit/{{hero.role}}">{{hero.role}}</li>
+    	{% endfor %}
+	</ul>
+    <p>Abilities:</p>
+    <ul>
+    	{% for ability in hero.abilities %}
+    		<li><a href="{{base_path}}/taidot/{{hero.ability}}">{{hero.ability}}</li>
+    	{% endfor %}
+    </ul>
+  </article>
+{% endblock %}

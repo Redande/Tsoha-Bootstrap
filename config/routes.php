@@ -51,3 +51,7 @@
   $routes->get('/kayttaja', function() {
   	HelloWorldController::kayttajaEsimerkki();
   });
+
+  $routes->get('/heroes', function() {
+    HeroController::index();
+  });
