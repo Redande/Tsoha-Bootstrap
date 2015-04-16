@@ -26,7 +26,7 @@ class HeroController extends BaseController{
 
 		$hero->save();
 
-		// Redirect::to('/heroes' . $hero->id, array('message' => 'Hero added successfully to the hero library!'));
+		Redirect::to('/sankari/' . $hero->id, array('message' => 'Hero added successfully to the hero library!'));
 	}
 
 	public static function create(){

@@ -81,6 +81,6 @@ class Hahmo extends BaseModel{
 		Kint::trace();
 		Kint::dump($row);
 
-		// $this->id = $row['id'];
+		$this->id = $row['id'];
 	}
 }
