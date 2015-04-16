@@ -70,4 +70,17 @@ class Hahmo extends BaseModel{
 
 		return $taidot;
 	}
+
+	public function save(){
+		$query = DB::connection()->prepare('INSERT INTO Hahmo (name) VALUES (:name) RETURNING id');
+
+		$query->execute(array('name' => $this->name));
+		Kint::dump($this->name . $this->id);
+		$row = $query->fetch();
+
+		Kint::trace();
+		Kint::dump($row);
+
+		// $this->id = $row['id'];
+	}
 }

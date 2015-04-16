@@ -59,3 +59,11 @@
   $routes->get('/sankari/:id', function($id) {
     HeroController::show($id);
   });
+
+  $routes->post('/heroes', function() {
+    HeroController::store();
+  });
+
+  $routes->get('/heroes/new', function(){
+    HeroController::create();
+  });
