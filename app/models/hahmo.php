@@ -72,7 +72,7 @@ class Hahmo extends BaseModel{
 	}
 
 	public function save(){
-		$query = DB::connection()->prepare('INSERT INTO Hahmo (name) VALUES (:name) RETURNING id');
+		$query = DB::connection()->prepare('INSERT INTO Hahmo (nimi) VALUES (:name) RETURNING id');
 
 		$query->execute(array('name' => $this->name));
 		Kint::dump($this->name . $this->id);
