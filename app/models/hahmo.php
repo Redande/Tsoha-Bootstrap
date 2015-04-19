@@ -5,6 +5,7 @@ class Hahmo extends BaseModel{
 
 	public function __construct($attributes){
 		parent::__construct($attributes);
+		$this->validators = array('validate_name');
 	}
 
 	public static function all(){
@@ -82,5 +83,17 @@ class Hahmo extends BaseModel{
 		Kint::dump($row);
 
 		$this->id = $row['id'];
+	}
+
+	public function validate_name(){
+		$errors = array();
+		if($this->name == '' || $this->name == null){
+			$errors[] = "Field 'name' can't be empty!";
+		}
+		if(strlen($this->name) < 2) {
+			$errors[] = "Name must be atleast 2 characters long!";
+		}
+
+		return $errors;
 	}
 }
