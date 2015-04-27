@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Taidot</h1>
+
+	<ol>
+		{% for ability in abilities %}
+			<li><a href="{{base_path}}/taito/{{ability.id}}">{{ability.name}}</li>
+		{% endfor %}	
+	</ol>
+{% endblock %}

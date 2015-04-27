@@ -67,3 +67,19 @@
   $routes->get('/heroes/new', function(){
     HeroController::create();
   });
+
+  $routes->get('/abilities', function() {
+    AbilityController::index();
+  });
+
+  $routes->get('/taito/:id', function($id) {
+    AbilityController::show($id);
+  });
+
+  $routes->post('/abilities', function() {
+    AbilityController::store();
+  });
+
+  $routes->get('/abilities/new', function(){
+    AbilityController::create();
+  });
