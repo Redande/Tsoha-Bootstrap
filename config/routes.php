@@ -1,7 +1,7 @@
 <?php
 
   $routes->get('/', function() {
-    HelloWorldController::index();
+    HelloWorldController::etusivu();
   });
 
   $routes->get('/hiekkalaatikko', function() {
@@ -94,4 +94,11 @@
 
   $routes->post('/heroes/:id/destroy', function($id){
     HeroController::destroy($id);
+  });
+
+  $routes->get('/login', function(){
+    UserController::login();
+  });
+  $routes->post('/login', function(){
+    UserController::handle_login();
   });
