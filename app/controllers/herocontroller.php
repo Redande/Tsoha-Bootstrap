@@ -26,7 +26,7 @@ class HeroController extends BaseController{
 
 		$hero->save();
 
-		Redirect::to('/heroes/' . $hero->id, array('message' => 'Hero added successfully to the hero library!'));
+		Redirect::to('/heroes' . $hero->id, array('message' => 'Hero added successfully to the hero library!'));
 	}
 
 	public static function create(){
@@ -55,7 +55,7 @@ class HeroController extends BaseController{
 
 		$hero->update();
 
-		Redirect::to('/heroes/' . $game->id, array('message' => 'Hero has been edited successfully!'));
+		Redirect::to('/heroes' . $game->id, array('message' => 'Hero has been edited successfully!'));
 		// }
 	}
 
@@ -64,6 +64,6 @@ class HeroController extends BaseController{
 
 		$hero->destroy();
 
-		Redirect::to('/heroes/', array('message' => 'Hero has been deleted successfully!'));
+		Redirect::to('/heroes', array('message' => 'Hero has been deleted successfully!'));
 	}
 }
