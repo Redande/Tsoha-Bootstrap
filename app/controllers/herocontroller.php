@@ -46,7 +46,7 @@ class HeroController extends BaseController{
 			'name' => $params['name']
 		);
 
-		$hero = new Hahmo($attributes);
+		$hero = Hahmo::find($id);
 		// $errors = $hero->errors();
 
 		// if(count($errors) > 0){
@@ -55,12 +55,12 @@ class HeroController extends BaseController{
 
 		$hero->update();
 
-		Redirect::to('/heroes/' . $game->id, array('message' => 'Hero has been edited successfully!'));
+		Redirect::to('/heroes/' . $hero->id, array('message' => 'Hero has been edited successfully!'));
 		// }
 	}
 
 	public static function destroy($id){
-		$hero = new Hahmo(array('id' => $id));
+		$hero = Hahmo::find($id);
 
 		$hero->destroy();
 

@@ -68,6 +68,10 @@
     HeroController::create();
   });
 
+  $routes->get('/heroes/:id', function($id) {
+    HeroController::show($id);
+  });
+
   $routes->get('/abilities', function() {
     AbilityController::index();
   });
