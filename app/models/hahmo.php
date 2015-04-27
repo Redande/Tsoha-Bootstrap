@@ -85,6 +85,32 @@ class Hahmo extends BaseModel{
 		$this->id = $row['id'];
 	}
 
+	public function update(){
+		$query = DB::connection()->prepare('UPDATE Hahmo (nimi) VALUES (:name) RETURNING id');
+
+		$query->execute(array('name' => $this->name));
+		Kint::dump($this->name . $this->id);
+		$row = $query->fetch();
+
+		Kint::trace();
+		Kint::dump($row);
+
+		$this->id = $row['id'];
+	}
+
+	public function destroy(){
+		$query = DB::connection()->prepare('DELETE Hahmo (nimi) VALUES (:name) RETURNING id');
+
+		$query->execute(array('name' => $this->name));
+		Kint::dump($this->name . $this->id);
+		$row = $query->fetch();
+
+		Kint::trace();
+		Kint::dump($row);
+
+		$this->id = $row['id'];
+	}
+
 	public function validate_name(){
 		$errors = array();
 		if($this->name == '' || $this->name == null){

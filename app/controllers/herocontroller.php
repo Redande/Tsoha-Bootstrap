@@ -26,10 +26,44 @@ class HeroController extends BaseController{
 
 		$hero->save();
 
-		Redirect::to('/sankari/' . $hero->id, array('message' => 'Hero added successfully to the hero library!'));
+		Redirect::to('/heroes/' . $hero->id, array('message' => 'Hero added successfully to the hero library!'));
 	}
 
 	public static function create(){
 		View::make('sankari/newHero.html');
+	}
+
+	public static function edit($id){
+		$hero = Hahmo::find($id);
+		View::make('sankari/edit.html', array('attributes' => $hero));
+	}
+
+	public static function update($id){
+		$params = $_POST;
+
+		$attributes = array(
+			'id' => $id,
+			'name' => $params['name']
+		);
+
+		$hero = new Hahmo($attributes);
+		// $errors = $hero->errors();
+
+		// if(count($errors) > 0){
+		// View::make('sankari/edit.html', array('errors' => $errors, 'attributes' => $attributes));
+		// }else{
+
+		$hero->update();
+
+		Redirect::to('/heroes/' . $game->id, array('message' => 'Hero has been edited successfully!'));
+		// }
+	}
+
+	public static function destroy($id){
+		$hero = new Hahmo(array('id' => $id));
+
+		$hero->destroy();
+
+		Redirect::to('/heroes/', array('message' => 'Hero has been deleted successfully!'));
 	}
 }

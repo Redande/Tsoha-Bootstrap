@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Esineet</h1>
+
+	<ol>
+		{% for item in items %}
+			<li><a href="{{base_path}}/esine/{{item.id}}">{{item.name}}</li>
+		{% endfor %}	
+	</ol>
+
+	<p><a href="{{base_path}}/items/new">Lisää esine</p>
+{% endblock %}

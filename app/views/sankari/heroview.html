@@ -7,4 +7,8 @@
   <article>
     <p>Name: {{hero.name}}</p>
   </article>
+
+  <form method="post" action="{{base_path}}/hero/{{hero.id}}/destroy" style="display: inline-block;">
+  <button type="submit" class="btn btn-danger">Poista</button>
+</form>
 {% endblock %}

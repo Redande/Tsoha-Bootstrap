@@ -83,3 +83,15 @@
   $routes->get('/abilities/new', function(){
     AbilityController::create();
   });
+
+  $routes->get('/heroes/:id/edit', function($id){
+    HeroController::edit($id);
+  });
+
+  $routes->post('/heroes/:id/edit', function($id){
+    HeroController::update($id);
+  });
+
+  $routes->post('/heroes/:id/destroy', function($id){
+    HeroController::destroy($id);
+  });
