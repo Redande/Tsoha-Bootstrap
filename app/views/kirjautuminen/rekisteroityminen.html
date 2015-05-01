@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Kirjaudu sisään</h1>
+  <h1>Rekisteröidy</h1>
 
   <form method="post" action="{{base_path}}/login">
     <div class="form-group">
@@ -10,10 +10,9 @@
 
     <div class="form-group">
       <label>Salasana</label>
-      <input class="form-control" name="password" type="password">
+      <input class="form-control" name="password" type="text">
     </div>
 
-    <button type="submit" class="btn btn-primary">Kirjaudu sisään</button>
-    <p><a href="{{base_path}}/rekisteroityminen" class="btn btn-primary">Rekisteröidy</a></p>
+    <button type="submit" class="btn btn-primary">Rekisteröidy</button>
   </form>
 {% endblock %}

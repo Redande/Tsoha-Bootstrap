@@ -28,9 +28,9 @@
   	HelloWorldController::etusivu();
   });
 
-  $routes->get('/login', function() {
-  	HelloWorldController::kirjaudu();
-  });
+  // $routes->get('/login', function() {
+  // 	HelloWorldController::kirjaudu();
+  // });
 
   $routes->get('/signup', function() {
   	HelloWorldController::luoTili();
@@ -105,4 +105,12 @@
   });
   $routes->post('/login', function(){
     UserController::handle_login();
+  });
+
+  $routes->get('/rekisteroityminen', function(){
+    UserController::rekisteroityminen();
+  });
+
+  $routes->post('/rekisteroityminen', function(){
+    UserController::rekisteroidy();
   });

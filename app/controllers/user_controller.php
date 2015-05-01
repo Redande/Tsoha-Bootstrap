@@ -17,4 +17,21 @@ class UserController extends BaseController{
       Redirect::to('/', array('message' => 'Tervetuloa takaisin ' . $user->name . '!'));
     }
   }
+
+  public static function rekisteroityminen(){
+    View::make('kirjautuminen/rekisteroityminen.html');
+  }
+
+  public static function rekisteroidy(){
+    $params = $_POST;
+
+    $user = new User(array(
+      'kayttajatunnus' => $params['username'],
+      'salasana' => $params['password']
+    ));
+
+    $user->save();
+
+    Redirect::to('/', array('message' => 'Tervetuloa ' . $user->name . '!'));
+  }
 }
