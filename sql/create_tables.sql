@@ -4,19 +4,19 @@ CREATE TABLE Account(
 	password varchar(15) NOT NULL
 );
 
-CREATE TABLE Hahmo(
+CREATE TABLE Hero(
 	id SERIAL PRIMARY KEY,
-	nimi varchar(15) NOT NULL
+	name varchar(15) NOT NULL
 );
 
-CREATE TABLE Rooli(
+CREATE TABLE Role(
 	id SERIAL PRIMARY KEY,
-	nimi varchar(15) NOT NULL,
-	kuvaus varchar(100) NOT NULL
+	name varchar(15) NOT NULL,
+	description varchar(100) NOT NULL
 );
 
-CREATE TABLE Liitos(
+CREATE TABLE JoinTable(
 	id SERIAL PRIMARY KEY,
-	hahmo INTEGER REFERENCES Hahmo(id) NOT NULL,
-	roolit INTEGER REFERENCES Rooli(id) NOT NULL
+	hero INTEGER REFERENCES Hero(id) NOT NULL,
+	role INTEGER REFERENCES Role(id) NOT NULL
 );

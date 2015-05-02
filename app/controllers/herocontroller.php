@@ -2,27 +2,24 @@
 
 class HeroController extends BaseController{
 	public static function index(){
-		$heroes = Hahmo::all();
+		$heroes = Hero::all();
 
-		View::make('sankari/lista.html', array('heroes' => $heroes));
+		View::make('hero/list.html', array('heroes' => $heroes));
 	}
 
 	public static function show($id){
-		$hero = Hahmo::find($id);
+		$hero = Hero::find($id);
 
-		View::make('sankari/heroview.html', array('hero' => $hero));
+		View::make('hero/heroview.html', array('hero' => $hero));
 	}
 
 	public static function store(){
 		$params = $_POST;
 
-		$hero = new Hahmo(array(
+		$hero = new Hero(array(
 			'name' => $params['name'],
-			'roles' => null,
-			'abilities' => null
+			'roles' => null
 		));
-
-		Kint::dump($params);
 
 		$hero->save();
 
@@ -30,12 +27,12 @@ class HeroController extends BaseController{
 	}
 
 	public static function create(){
-		View::make('sankari/newHero.html');
+		View::make('hero/newHero.html');
 	}
 
 	public static function edit($id){
-		$hero = Hahmo::find($id);
-		View::make('sankari/edit.html', array('attributes' => $hero));
+		$hero = Hero::find($id);
+		View::make('hero/edit.html', array('attributes' => $hero));
 	}
 
 	public static function update($id){
@@ -46,22 +43,15 @@ class HeroController extends BaseController{
 			'name' => $params['name']
 		);
 
-		$hero = Hahmo::find($id);
-		Kint::dump($hero);
-		// $errors = $hero->errors();
-
-		// if(count($errors) > 0){
-		// View::make('sankari/edit.html', array('errors' => $errors, 'attributes' => $attributes));
-		// }else{
+		$hero = Hero::find($id);
 
 		$hero->update();
 
 		Redirect::to('/heroes/' . $hero->id, array('message' => 'Hero has been edited successfully!'));
-		// }
 	}
 
 	public static function destroy($id){
-		$hero = Hahmo::find($id);
+		$hero = Hero::find($id);
 
 		$hero->destroy();
 

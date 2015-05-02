@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>Roles</h1>
+
+	<ol>
+		{% for role in roles %}
+			<li><a href="{{base_path}}/role/{{role.id}}">{{role.name}}</li>
+		{% endfor %}	
+	</ol>
+
+	<p><a href="{{base_path}}/roles/new">Add a role</p>
+{% endblock %}

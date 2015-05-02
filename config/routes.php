@@ -8,23 +8,15 @@
     HelloWorldController::sandbox();
   });
 
-  $routes->get('/sankarit', function() {
-  	HelloWorldController::hahmolista();
-  });
+  // $routes->get('/sankarit', function() {
+  // 	HelloWorldController::hahmolista();
+  // });
 
-  $routes->get('/esineet', function() {
-  	HelloWorldController::esinelista();
-  });
+  // $routes->get('/roolit', function() {
+  // 	HelloWorldController::roolilista();
+  // });
 
-  $routes->get('/taidot', function() {
-  	HelloWorldController::taitolista();
-  });
-
-  $routes->get('/roolit', function() {
-  	HelloWorldController::roolilista();
-  });
-
-  $routes->get('/etusivu', function() {
+  $routes->get('/frontpage', function() {
   	HelloWorldController::etusivu();
   });
 
@@ -36,27 +28,15 @@
   // 	HelloWorldController::luoTili();
   // });
 
-  $routes->get('/esine', function() {
-  	HelloWorldController::esineEsimerkki();
-  });
-
-  $routes->get('/hahmo', function() {
-  	HelloWorldController::hahmoEsimerkki();
-  });
-
-  $routes->get('/joukkue', function() {
-  	HelloWorldController::joukkueEsimerkki();
-  });
-
-  $routes->get('/kayttaja', function() {
-  	HelloWorldController::kayttajaEsimerkki();
-  });
+  // $routes->get('/hahmo', function() {
+  // 	HelloWorldController::hahmoEsimerkki();
+  // });
 
   $routes->get('/heroes', function() {
     HeroController::index();
   });
 
-  $routes->get('/sankari/:id', function($id) {
+  $routes->get('/hero/:id', function($id) {
     HeroController::show($id);
   });
 
@@ -70,22 +50,6 @@
 
   $routes->get('/heroes/:id', function($id) {
     HeroController::show($id);
-  });
-
-  $routes->get('/abilities', function() {
-    AbilityController::index();
-  });
-
-  $routes->get('/taito/:id', function($id) {
-    AbilityController::show($id);
-  });
-
-  $routes->post('/abilities', function() {
-    AbilityController::store();
-  });
-
-  $routes->get('/abilities/new', function(){
-    AbilityController::create();
   });
 
   $routes->get('/heroes/:id/edit', function($id){
