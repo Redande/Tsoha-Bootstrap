@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% import "macros/forms.html" as forms %}
+
+  <header>
+    <h1>{{role.name}}</h1>
+  </header>
+
+  <article>
+    <p>Name: {{role.name}}</p>
+    <p>Description: {{role.description}}</p>
+  </article>
+
+  {{forms.destroy_button("#{base_path}/roles/#{role.id}/destroy")}}
+  <a href="{{base_path}}/roles/{{role.id}}/edit" class="btn btn-default">Edit</a>
+
+{% endblock %}

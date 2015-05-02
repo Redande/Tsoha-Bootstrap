@@ -44,7 +44,7 @@ class Hero extends BaseModel{
 	}
 
 	public static function roles($id){
-		$query = DB::connection()->prepare('SELECT * FROM Join WHERE hero = :id');
+		$query = DB::connection()->prepare('SELECT * FROM JoinTable WHERE hero = :id');
 		$query->execute(array('id' => $id));
 		$row = $query->fetch();
 		$roles = array();
