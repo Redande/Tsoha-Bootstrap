@@ -32,9 +32,9 @@
   // 	HelloWorldController::kirjaudu();
   // });
 
-  $routes->get('/signup', function() {
-  	HelloWorldController::luoTili();
-  });
+  // $routes->get('/signup', function() {
+  // 	HelloWorldController::luoTili();
+  // });
 
   $routes->get('/esine', function() {
   	HelloWorldController::esineEsimerkki();
@@ -107,10 +107,10 @@
     UserController::handle_login();
   });
 
-  $routes->get('/rekisteroityminen', function(){
-    UserController::rekisteroityminen();
+  $routes->get('/signup', function(){
+    UserController::signup();
   });
 
-  $routes->post('/rekisteroityminen', function(){
-    UserController::rekisteroidy();
+  $routes->post('/signup', function(){
+    UserController::handle_signup();
   });

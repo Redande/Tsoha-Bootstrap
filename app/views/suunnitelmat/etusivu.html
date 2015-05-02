@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
+
+<div class="alert alert-success">
+  {{message}}
+</div>
+
   <header>
     <h1>Dota2 Tietokanta</h1>
   </header>
@@ -9,7 +14,7 @@
   </article>
 
   <article>
-    <p>Sivulta löytyy kaikki videopelin Dota2 pelattavat hahmot, kaikki esineet mitä hahmoille voi ostaa pelissä, sekä hahmoihin ja esineisiin liittyvät taidot ja loitsut.</p>
-    <p>Lisäksi sivuilla voi luoda käyttäjätilin. Kirjautuneet käyttäjät voivat luoda omia viiden hahmon joukkueita.</p>
+    <p>Sivulta löytyy kaikki videopelin Dota2 pelattavat hahmot ja niiden roolit.</p>
+    <p>Lisäksi sivuilla voi luoda käyttäjätilin. Kirjautuneet käyttäjät voivat lisätä, muokata ja poistaa hahmoja ja rooleja.</p>
   </article>
 {% endblock %}

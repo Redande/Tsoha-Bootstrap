@@ -9,21 +9,13 @@ Yleisiä linkkejä:
 
 Työn aihe on videopeliin “Dota 2” liittyvä tietokanta. 
 
-Tarkoituksena on, että käyttäjä voisi katsoa pelattavia hahmoja ja hahmoille hankittavia esineitä, sekä luoda viidestä hahmosta koostuvan joukkueen.
+Tarkoituksena on, että käyttäjä voisi katsoa pelattavia hahmoja ja niiden rooleja.
 
-Tavoitteena on siis, että rekisteröitynyt käyttäjä voi luoda ja tallentaa joukkueita, ja lisäksi kuka tahansa käyttäjä voi selata listaa hahmoista ja esineistä, ja tutkia niihin liittyviä taitoja. 
+Tavoitteena on siis, että rekisteröitynyt käyttäjä voi lisätä, muokata ja poistaa hahmoja ja rooleja, ja lisäksi kuka tahansa käyttäjä voi selata listaa hahmoista ja rooleista.
 
 ## Linkkejä esimerkkisivuille
 
 * [Etusivu](http://antleino.users.cs.helsinki.fi/tsoha/etusivu)
-* [Sankarit(ei toiminnallisuutta, testaa mieluummin viimeistä linkkiä)](http://antleino.users.cs.helsinki.fi/tsoha/sankarit)
-* [Esineet](http://antleino.users.cs.helsinki.fi/tsoha/esineet)
-* [Taidot](http://antleino.users.cs.helsinki.fi/tsoha/taidot)
+* [Hahmot](http://antleino.users.cs.helsinki.fi/tsoha/heroes)
 * [Roolit](http://antleino.users.cs.helsinki.fi/tsoha/roolit)
-* [SankariEsimerkki](http://antleino.users.cs.helsinki.fi/tsoha/hahmo)
-* [EsineEsimerkki](http://antleino.users.cs.helsinki.fi/tsoha/esine)
-* [JoukkueEsimerkki](http://antleino.users.cs.helsinki.fi/tsoha/joukkue)
-* [KäyttäjäEsimerkki](http://antleino.users.cs.helsinki.fi/tsoha/kayttaja)
-* [Käyttäjätilin luominen](http://antleino.users.cs.helsinki.fi/tsoha/signup)
 * [Sisäänkirjautuminen](http://antleino.users.cs.helsinki.fi/tsoha/login)
-* [Sankarilista linkkeineen sankareiden sivulle](http://antleino.users.cs.helsinki.fi/tsoha/heroes)

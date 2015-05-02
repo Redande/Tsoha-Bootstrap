@@ -7,15 +7,16 @@ class User extends BaseModel{
 		parent::__construct($attributes);
 	}
 
-	public static function authenticate($kayttajatunnus, $salasana){
-		$query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE kayttajatunnus = :kayttajatunnus AND salasana = :salasana LIMIT 1', array('kayttajatunnus' => $kayttajatunnus, 'salasana' => $salasana));
+	public static function authenticate($username, $password){
+		$query = DB::connection()->prepare('SELECT * FROM User WHERE username = :username AND password = :password LIMIT 1', array('username' => $username, 'password' => $password));
 		$query->execute();
 		$row = $query->fetch();
+
 		if($row){
 			$user = new User(array(
 				'id' => $row['id'],
-				'kayttajatunnus' => $row['kayttajatunnus'],
-				'salasana' => $row['salasana']
+				'username' => $row['username'],
+				'password' => $row['password']
 				));
 
 			return $user;
@@ -25,15 +26,15 @@ class User extends BaseModel{
 	}
 
 	public static function find($id){
-		$query = DB::connection()->prepare('SELECT * FROM Kayttaja WHERE id = :id LIMIT 1');
+		$query = DB::connection()->prepare('SELECT * FROM User WHERE id = :id LIMIT 1');
 		$query->execute(array('id' => $id));
 		$row = $query->fetch();
 
 		if($row){
 			$user = new User(array(
 				'id' => $row['id'],
-				'kayttajatunnus' => $row['kayttajatunnus'],
-				'salasana' => $row['salasana']
+				'username' => $row['username'],
+				'password' => $row['password']
 			));
 
 			return $user;
@@ -43,9 +44,9 @@ class User extends BaseModel{
 	}
 
 	public function save(){
-		$query = DB::connection()->prepare('INSERT INTO Kayttaja (kayttajatunnus, salasana) VALUES (:kayttajatunnus, :salasana) RETURNING id');
+		$query = DB::connection()->prepare('INSERT INTO User (username, password) VALUES (:username, :password) RETURNING id');
 
-		$query->execute(array('kayttajatunnus' => $this->kayttajatunnus, 'salasana' => $this->salasana));
+		$query->execute(array('username' => $this->username, 'password' => $this->password));
 		$row = $query->fetch();
 
 		$this->id = $row['id'];

@@ -1,7 +1,7 @@
-CREATE TABLE Kayttaja(
+CREATE TABLE User(
 	id SERIAL PRIMARY KEY,
-	kayttajatunnus varchar(15) NOT NULL,
-	salasana varchar(15) NOT NULL
+	username varchar(15) NOT NULL,
+	password varchar(15) NOT NULL
 );
 
 CREATE TABLE Joukkue(

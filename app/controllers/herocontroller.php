@@ -47,6 +47,7 @@ class HeroController extends BaseController{
 		);
 
 		$hero = Hahmo::find($id);
+		Kint::dump($hero);
 		// $errors = $hero->errors();
 
 		// if(count($errors) > 0){
