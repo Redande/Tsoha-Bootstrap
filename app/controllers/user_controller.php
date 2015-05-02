@@ -33,7 +33,6 @@ class UserController extends BaseController{
     ));
 
     $user->save();
-    Kint::dump($user);
-    // Redirect::to('/', array('message' => 'Welcome ' . $user->username . '!'));
+    Redirect::to('/', array('message' => 'Welcome ' . $user->username . '!'));
   }
 }

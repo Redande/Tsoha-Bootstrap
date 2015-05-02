@@ -8,10 +8,10 @@ class User extends BaseModel{
 	}
 
 	public static function authenticate($username, $password){
-		$query = DB::connection()->prepare('SELECT * FROM User WHERE username = :username AND password = :password LIMIT 1', array('username' => $username, 'password' => $password));
+		$query = DB::connection()->prepare('SELECT * FROM Account WHERE username = :username AND password = :password LIMIT 1', array('username' => $username, 'password' => $password));
 		$query->execute();
 		$row = $query->fetch();
-
+		Kint::dump($row);
 		if($row){
 			$user = new User(array(
 				'id' => $row['id'],
@@ -26,7 +26,7 @@ class User extends BaseModel{
 	}
 
 	public static function find($id){
-		$query = DB::connection()->prepare('SELECT * FROM User WHERE id = :id LIMIT 1');
+		$query = DB::connection()->prepare('SELECT * FROM Account WHERE id = :id LIMIT 1');
 		$query->execute(array('id' => $id));
 		$row = $query->fetch();
 
@@ -44,7 +44,7 @@ class User extends BaseModel{
 	}
 
 	public function save(){
-		$query = DB::connection()->prepare('INSERT INTO User (username, password) VALUES (:username, :password) RETURNING id');
+		$query = DB::connection()->prepare('INSERT INTO Account (username, password) VALUES (:username, :password) RETURNING id');
 
 		$query->execute(array('username' => $this->username, 'password' => $this->password));
 		$row = $query->fetch();
