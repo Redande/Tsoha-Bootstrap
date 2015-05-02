@@ -65,7 +65,6 @@ class Role extends BaseModel{
 		$row = $query->fetch();
 
 		$this->id = $row['id'];
-		Kint::dump($row);
 	}
 
 	public function update(){

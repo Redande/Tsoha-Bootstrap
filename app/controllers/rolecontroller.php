@@ -10,7 +10,7 @@ class RoleController extends BaseController{
 	public static function show($id){
 		$role = Role::find($id);
 
-		View::make('role/roleview.html', array('hero' => $hero));
+		View::make('role/roleview.html', array('role' => $role));
 	}
 
 	public static function store(){
@@ -22,8 +22,8 @@ class RoleController extends BaseController{
 		));
 
 		$role->save();
-		Kint::dump($role);
-		// Redirect::to('/roles/' . $role->id, array('message' => 'Role added successfully to the role library!'));
+
+		Redirect::to('/roles/' . $role->id, array('message' => 'Role added successfully to the role library!'));
 	}
 
 	public static function create(){

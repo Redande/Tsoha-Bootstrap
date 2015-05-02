@@ -12,7 +12,7 @@ CREATE TABLE Hero(
 CREATE TABLE Role(
 	id SERIAL PRIMARY KEY,
 	name varchar(15) NOT NULL,
-	description varchar(100) NOT NULL
+	description varchar(500) NOT NULL
 );
 
 CREATE TABLE JoinTable(
