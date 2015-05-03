@@ -35,4 +35,9 @@ class UserController extends BaseController{
     $user->save();
     Redirect::to('/', array('message' => 'Welcome ' . $user->username . '!'));
   }
+
+  public static function logout(){
+    $_SESSION['user'] = null;
+    Redirect::to('/login', array('message' => 'Thank you, come again!'));
+  }
 }

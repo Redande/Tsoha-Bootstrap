@@ -27,10 +27,14 @@ class RoleController extends BaseController{
 	}
 
 	public static function create(){
+		self::check_logged_in();
+
 		View::make('role/newRole.html');
 	}
 
 	public static function edit($id){
+		self::check_logged_in();
+
 		$role = Role::find($id);
 		View::make('role/edit.html', array('attributes' => $role));
 	}
@@ -52,6 +56,8 @@ class RoleController extends BaseController{
 	}
 
 	public static function destroy($id){
+		self::check_logged_in();
+		
 		$role = Role::find($id);
 
 		$role->destroy();

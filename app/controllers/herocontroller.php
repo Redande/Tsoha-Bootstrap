@@ -27,10 +27,14 @@ class HeroController extends BaseController{
 	}
 
 	public static function create(){
+		self::check_logged_in();
+
 		View::make('hero/newHero.html');
 	}
 
 	public static function edit($id){
+		self::check_logged_in();
+
 		$hero = Hero::find($id);
 		View::make('hero/edit.html', array('attributes' => $hero));
 	}
@@ -51,6 +55,8 @@ class HeroController extends BaseController{
 	}
 
 	public static function destroy($id){
+		self::check_logged_in();
+		
 		$hero = Hero::find($id);
 
 		$hero->destroy();

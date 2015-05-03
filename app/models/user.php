@@ -9,7 +9,7 @@ class User extends BaseModel{
 
 	public static function authenticate($username, $password){
 		$query = DB::connection()->prepare('SELECT * FROM Account WHERE username = :username AND password = :password LIMIT 1', array('username' => $username, 'password' => $password));
-		$query->execute();
+		$query->execute(array('username' => $username, 'password' => $password));
 		$row = $query->fetch();
 		Kint::dump($row);
 		if($row){

@@ -110,3 +110,7 @@
   $routes->post('/roles/:id/destroy', function($id){
     RoleController::destroy($id);
   });
+
+  $routes->post('/logout', function(){
+    UserController::logout();
+  });
