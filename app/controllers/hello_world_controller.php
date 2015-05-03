@@ -12,14 +12,6 @@
         'name' => 'a'
         ));
       $errors = $validatortest->errors();
-
-      Kint::dump($errors);
-
-      // $NP = Hahmo::find(1);
-      // $hahmot = Hahmo::all();
-
-      // Kint::dump($hahmot);
-      // Kint::dump($NP);
     }
 
     public static function hahmolista(){

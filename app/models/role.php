@@ -83,8 +83,15 @@ class Role extends BaseModel{
 	}
 
 	public function destroy(){
+		self::deleteHeroes();
+
 		$query = DB::connection()->prepare('DELETE FROM Role WHERE id = :id');
 
 		$query->execute(array('id' => $this->id));
+	}
+
+	public function deleteHeroes(){
+		$query = DB::connection()->prepare('DELETE FROM JoinTable WHERE role = :role');
+		$query->execute(array('role' => $this->id));
 	}
 }

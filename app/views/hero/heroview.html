@@ -2,6 +2,14 @@
 {% block content %}
 
 {% import "macros/forms.html" as forms %}
+
+
+{% if message %}
+  <div class="alert alert-success">
+  {{message}}
+  </div>
+{% endif %}
+
   <header>
     <h1>{{hero.name}}</h1>
   </header>

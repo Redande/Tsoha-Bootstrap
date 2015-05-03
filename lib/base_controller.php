@@ -15,7 +15,7 @@
 
     public static function check_logged_in(){
       if(!isset($_SESSION['user'])){
-      Redirect::to('/login', array('error' => 'You have to log in to use that feature!'));
+      Redirect::to('/login', array('message' => 'You have to log in to use that feature!'));
     }
     }
 

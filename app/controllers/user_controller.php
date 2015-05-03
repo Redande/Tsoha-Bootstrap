@@ -9,10 +9,8 @@ class UserController extends BaseController{
 
     $user = User::authenticate($params['username'], $params['password']);
 
-    Kint::dump($user);
-
     if(!$user){
-      View::make('user/login.html', array('error' => 'Incorrect username or password!', 'username' => $params['username']));
+      View::make('user/login.html', array('message' => 'Incorrect username or password!', 'username' => $params['username']));
     }else{
       $_SESSION['user'] = $user->id;
 
@@ -33,7 +31,7 @@ class UserController extends BaseController{
     ));
 
     $user->save();
-    Redirect::to('/', array('message' => 'Welcome ' . $user->username . '!'));
+    Redirect::to('/', array('message' => 'Welcome ' . $user->username . '! Note that you have to log in before you can use any features.'));
   }
 
   public static function logout(){
