@@ -43,8 +43,8 @@ class HeroController extends BaseController{
 			'name' => $params['name']
 		);
 
-		$hero = Hero::find($id);
 
+		$hero = new Hero($attributes);
 		$hero->update();
 
 		Redirect::to('/heroes/' . $hero->id, array('message' => 'Hero has been edited successfully!'));

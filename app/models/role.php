@@ -70,7 +70,9 @@ class Role extends BaseModel{
 	public function update(){
 		$query = DB::connection()->prepare('UPDATE Role SET name = :name, description = :description WHERE id = :id');
 
-		$query->execute(array('id' => $this->id));
+		$query->execute(array('id' => $this->id, 'name' => $this->name, 'description' => $this->description));
+
+		$row = $query->fetch();
 	}
 
 	public function destroy(){

@@ -29,14 +29,12 @@ class Hero extends BaseModel{
 		$query = DB::connection()->prepare('SELECT * FROM Hero WHERE id = :id LIMIT 1');
 		$query->execute(array('id' => $id));
 		$row = $query->fetch();
-
 		if($row){
 			$hero = new Hero(array(
 				'id' => $row['id'],
 				'name' => $row['name'],
 				'roles' => Hero::roles($row['id'])
 			));
-
 			return $hero;
 		}
 
@@ -68,7 +66,9 @@ class Hero extends BaseModel{
 	public function update(){
 		$query = DB::connection()->prepare('UPDATE Hero SET name = :name WHERE id = :id');
 
-		$query->execute(array('id' => $this->id));
+		$query->execute(array('id' => $this->id, 'name' => $this->name));
+
+		$row = $query->fetch();
 	}
 
 	public function destroy(){

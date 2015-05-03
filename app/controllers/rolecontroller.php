@@ -44,7 +44,7 @@ class RoleController extends BaseController{
 			'description' => $params['description']
 		);
 
-		$role = Role::find($id);
+		$role = new Role($attributes);
 
 		$role->update();
 
