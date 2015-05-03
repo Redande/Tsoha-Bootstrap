@@ -19,3 +19,7 @@ Rekisteröitynyt käyttäjä voi lisätä, muokata ja poistaa hahmoja ja rooleja
 * [Hahmot](http://antleino.users.cs.helsinki.fi/tsoha/heroes)
 * [Roolit](http://antleino.users.cs.helsinki.fi/tsoha/roles)
 * [Sisäänkirjautuminen](http://antleino.users.cs.helsinki.fi/tsoha/login)
+
+## Ohjaajille tiedoksi
+
+Käyttäjätunnukset, joilla voi kirjautua sisään on esimerkiksi Username: Pena, Password: Pena. Voi toki myös luoda uuden accountin, koska kirjautuneilla käyttäjillä ei ole eroavaisuuksia (ei erikseen adminia).
