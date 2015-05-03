@@ -22,7 +22,6 @@ class Role extends BaseModel{
 				'heroes' => Role::heroes($row['id'])
 			));
 		}
-
 		return $roles;
 	}
 
@@ -46,16 +45,24 @@ class Role extends BaseModel{
 	}
 
 	public static function heroes($id){
-		$query = DB::connection()->prepare('SELECT * FROM JoinTable WHERE role = :id');
-		$query->execute(array('id' => $id));
-		$row = $query->fetch();
+		$query = DB::connection()->prepare('SELECT hero FROM JoinTable WHERE role = :role');
+		$query->execute(array('role' => $id));
+		$rows = $query->fetchAll();
 		$heroes = array();
 
-		if($row){
-			$heroes = $row['hero'];
+		foreach($rows as $row){
+			$heroes[] = array($row['hero'], self::getHeroName($row['hero']));
 		}
 
 		return $heroes;
+	}
+
+	public function getHeroName($id){
+		$query = DB::connection()->prepare('SELECT name FROM Hero WHERE id = :id LIMIT 1');
+		$query->execute(array('id' => $id));
+		$row = $query->fetch();
+		$heroName = $row['name'];
+		return $heroName;
 	}
 
 	public function save(){

@@ -9,17 +9,23 @@ class HeroController extends BaseController{
 
 	public static function show($id){
 		$hero = Hero::find($id);
-
-		View::make('hero/heroview.html', array('hero' => $hero));
+		
+		View::make('hero/heroview.html', array('hero' => $hero, 'roles' => $hero->roles($id)));
 	}
 
 	public static function store(){
 		$params = $_POST;
 
+		$roles = $params['roles'];
+
 		$hero = new Hero(array(
 			'name' => $params['name'],
-			'roles' => null
+			'roles' => array()
 		));
+
+		foreach($roles as $role){
+			$hero->roles[] = $role;
+		}
 
 		$hero->save();
 
@@ -29,18 +35,20 @@ class HeroController extends BaseController{
 	public static function create(){
 		self::check_logged_in();
 
-		View::make('hero/newHero.html');
+		View::make('hero/newHero.html', array('roles' => Role::all()));
 	}
 
 	public static function edit($id){
 		self::check_logged_in();
 
 		$hero = Hero::find($id);
-		View::make('hero/edit.html', array('attributes' => $hero));
+		View::make('hero/edit.html', array('attributes' => $hero, 'roles' => Role::all()));
 	}
 
 	public static function update($id){
 		$params = $_POST;
+
+		$roles = $params['roles'];
 
 		$attributes = array(
 			'id' => $id,
@@ -49,6 +57,11 @@ class HeroController extends BaseController{
 
 
 		$hero = new Hero($attributes);
+
+		foreach($roles as $role){
+			$hero->roles[] = $role;
+		}
+
 		$hero->update();
 
 		Redirect::to('/heroes/' . $hero->id, array('message' => 'Hero has been edited successfully!'));

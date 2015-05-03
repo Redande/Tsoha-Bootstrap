@@ -2,13 +2,20 @@
 {% block content %}
 
 {% import "macros/forms.html" as forms %}
-
   <header>
     <h1>{{hero.name}}</h1>
   </header>
 
   <article>
     <p>Name: {{hero.name}}</p>
+  </article>
+
+  <article>
+  	<p>Roles:
+  		{% for role in roles %}
+  		<p><a href="{{base_path}}/roles/{{role[0]}}">{{role[1]}}</a></p>
+  		{% endfor %}
+  	</p>
   </article>
 
   {{forms.destroy_button("#{base_path}/heroes/#{hero.id}/destroy")}}

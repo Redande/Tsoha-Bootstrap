@@ -10,6 +10,11 @@
   <article>
     <p>Name: {{role.name}}</p>
     <p>Description: {{role.description}}</p>
+    <p>Heroes with this role: 
+    	{% for hero in heroes %}
+  		<p><a href="{{base_path}}/heroes/{{hero[0]}}">{{hero[1]}}</a></p>
+  		{% endfor %}
+    </p>
   </article>
 
   {{forms.destroy_button("#{base_path}/roles/#{role.id}/destroy")}}

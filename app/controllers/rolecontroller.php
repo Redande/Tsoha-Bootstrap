@@ -10,7 +10,7 @@ class RoleController extends BaseController{
 	public static function show($id){
 		$role = Role::find($id);
 
-		View::make('role/roleview.html', array('role' => $role));
+		View::make('role/roleview.html', array('role' => $role, 'heroes' => Role::heroes($id)));
 	}
 
 	public static function store(){
